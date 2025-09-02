@@ -1,0 +1,9 @@
+package com.ams.AMS.repository.user;
+
+import com.ams.AMS.entities.User.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+}
