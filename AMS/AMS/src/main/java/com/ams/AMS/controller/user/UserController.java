@@ -2,7 +2,7 @@ package com.ams.AMS.controller.user;
 
 import com.ams.AMS.vo.userVo.UserVo;
 import com.ams.AMS.services.user.UserService;
-import com.ams.AMS.util.Response;
+import com.ams.AMS.util.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

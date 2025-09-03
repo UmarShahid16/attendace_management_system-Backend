@@ -1,4 +1,4 @@
-package com.ams.AMS.util;
+package com.ams.AMS.util.imageUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;

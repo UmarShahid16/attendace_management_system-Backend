@@ -6,11 +6,11 @@ import com.ams.AMS.entities.roles.Roles;
 import com.ams.AMS.repository.department.DepartmentRepository;
 import com.ams.AMS.repository.role.RoleRepository;
 import com.ams.AMS.repository.user.UserRepository;
-import com.ams.AMS.util.ImageUtil;
-import com.ams.AMS.util.JwtUtil;
+import com.ams.AMS.util.imageUtil.ImageUtil;
+import com.ams.AMS.util.jwtUtil.JwtUtil;
 import com.ams.AMS.vo.userVo.UserVo;
 import com.ams.AMS.exceptions.DAOResponse;
-import com.ams.AMS.util.Response;
+import com.ams.AMS.util.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.authentication.AuthenticationManager;

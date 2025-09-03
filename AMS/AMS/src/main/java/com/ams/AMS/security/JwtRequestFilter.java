@@ -1,6 +1,6 @@
 package com.ams.AMS.security;
 
-import com.ams.AMS.util.JwtUtil;
+import com.ams.AMS.util.jwtUtil.JwtUtil;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
 import jakarta.servlet.*;
