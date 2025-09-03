@@ -1,4 +1,4 @@
-package com.ams.AMS.util;
+package com.ams.AMS.util.response;
 
 import com.ams.AMS.exceptions.DAOResponse;
 import lombok.Data;

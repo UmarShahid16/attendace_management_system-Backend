@@ -1,4 +1,4 @@
-package com.ams.AMS.util;
+package com.ams.AMS.util.jwtUtil;
 
 import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Value;

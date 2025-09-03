@@ -1,6 +1,6 @@
 package com.ams.AMS.exceptions;
 
-import com.ams.AMS.util.Response;
+import com.ams.AMS.util.response.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
