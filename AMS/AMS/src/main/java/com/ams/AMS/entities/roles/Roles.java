@@ -11,4 +11,5 @@ import lombok.Data;
 public class Roles  extends BaseEntity {
     private String roleName;
     private String description;
+    private Boolean isActive;
 }

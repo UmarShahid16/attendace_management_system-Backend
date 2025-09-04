@@ -5,21 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cec3ee67-427f-4aaf-818e-05cd716aa297" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/dateFormate/CustomDateSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/attendanceVo/AttendanceVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/baseVo/BaseVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/departmentVo/DepartmentVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/holidayVo/HolidayVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/leavesVo/LeavesVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/rolesVo/RolesVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/role/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/role/RoleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/exceptions/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/exceptions/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/security/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/security/JwtRequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/roles/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/roles/Roles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/department/DepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/department/DepartmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/role/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/role/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/role/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/role/RoleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/imageUtil/ImageUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/jwtUtil/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/response/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/leavesVo/LeavesVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/leavesVo/LeavesVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/rolesVo/RolesVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/rolesVo/RolesVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,8 +66,13 @@
   "keyToString": {
     "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "Database connection parameters found",
     "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.AmsApplication.executor": "Debug",
     "git-widget-placeholder": "rehman",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
@@ -104,11 +107,28 @@
       <option name="presentableId" value="Default" />
       <updated>1756904869145</updated>
       <workItem from="1756904872796" duration="296000" />
-      <workItem from="1756905511386" duration="1382000" />
+      <workItem from="1756905511386" duration="2105000" />
+      <workItem from="1756965272384" duration="6252000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
+          <line>159</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
+          <line>167</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
