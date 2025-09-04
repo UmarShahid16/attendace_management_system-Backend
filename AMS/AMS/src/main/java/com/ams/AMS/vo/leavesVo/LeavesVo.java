@@ -17,6 +17,9 @@ public class LeavesVo  extends BaseVo {
        LeavesVo vo = new LeavesVo();
        if(leaves != null) {
            vo.setId(leaves.getId());
+           vo.setLeaveType(leaves.getLeaveType());
+           vo.setLeaveDescription(leaves.getDescription());
+           vo.setMaxDays(leaves.getMaxDays());
            vo.setCreatedAt(leaves.getCreatedAt());
            if(leaves.getCreatedBy() != null){
                vo.setCreatedBy(leaves.getCreatedBy());
@@ -24,9 +27,6 @@ public class LeavesVo  extends BaseVo {
            if(leaves.getModifiedAt() != null){
                vo.setModifiedAt(leaves.getModifiedAt());
            }
-           vo.setLeaveType(leaves.getLeaveType());
-           vo.setLeaveDescription(leaves.getDescription());
-           vo.setMaxDays(leaves.getMaxDays());
        }
         return vo;
     }

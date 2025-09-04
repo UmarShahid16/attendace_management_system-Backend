@@ -10,6 +10,7 @@ import lombok.Data;
 public class RolesVo extends BaseVo {
     private String roleName;
     private String roleDescription;
+    private Boolean isActive;
 
     public static RolesVo getRolesVo(Roles role){
         RolesVo rolesVo = new RolesVo();
@@ -17,6 +18,7 @@ public class RolesVo extends BaseVo {
             rolesVo.setId(role.getId());
             rolesVo.setRoleName(role.getRoleName());
             rolesVo.setRoleDescription(role.getDescription());
+            rolesVo.setIsActive(role.getIsActive());
             rolesVo.setCreatedAt(role.getCreatedAt());
             if(role.getModifiedAt() != null){
                 rolesVo.setModifiedAt(role.getModifiedAt());
@@ -25,5 +27,6 @@ public class RolesVo extends BaseVo {
                 rolesVo.setCreatedBy(role.getCreatedBy());
             }
         }
+        return rolesVo;
     }
 }

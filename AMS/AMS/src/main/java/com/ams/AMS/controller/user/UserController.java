@@ -5,10 +5,7 @@ import com.ams.AMS.services.user.UserService;
 import com.ams.AMS.util.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
@@ -28,5 +25,17 @@ public class UserController {
         Response loginResponse = userService.login(userVo);
         return ResponseEntity.ok(loginResponse);
     }
+    @GetMapping("/list")
+    public ResponseEntity<?> getAllUsers( @RequestParam(required = false) Boolean isActive, @RequestParam(required = false) Long pageNo, @RequestParam(required = false) Long pageSize) {
+        Response response = userService.getAllUsers(isActive, pageNo, pageSize);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/byId/{userId}")
+    public ResponseEntity<?> getUserById(@PathVariable Long userId) {
+        Response response = userService.getUserById(userId);
+        return ResponseEntity.ok(response);
+    }
+
 
 }
