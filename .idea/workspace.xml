@@ -5,19 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cec3ee67-427f-4aaf-818e-05cd716aa297" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/leave/LeaveLogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/leave/LeavesLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/leave/LeaveLogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/leavesVo/LeavesLogVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/role/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/role/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/roles/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/roles/Roles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/department/DepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/department/DepartmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/role/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/role/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/leave/LeaveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/leave/LeaveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/User/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/leave/Leaves.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/leave/Leaves.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/exceptions/DAOResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/exceptions/DAOResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/leave/LeaveRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/leave/LeaveRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/role/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/role/RoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/leavesVo/LeavesVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/leavesVo/LeavesVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/rolesVo/RolesVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/rolesVo/RolesVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -108,7 +110,8 @@
       <updated>1756904869145</updated>
       <workItem from="1756904872796" duration="296000" />
       <workItem from="1756905511386" duration="2105000" />
-      <workItem from="1756965272384" duration="6252000" />
+      <workItem from="1756965272384" duration="7549000" />
+      <workItem from="1756974866816" duration="12486000" />
     </task>
     <servers />
   </component>
@@ -120,13 +123,41 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
-          <line>159</line>
+          <line>165</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
-          <line>167</line>
+          <line>188</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveLogService.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java</url>
+          <line>229</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java</url>
+          <line>107</line>
+          <properties class="com.ams.AMS.services.leave.LeaveService" method="leavesByUserId">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java</url>
+          <line>34</line>
+          <properties class="com.ams.AMS.services.leave.LeaveService" method="applyLeave">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

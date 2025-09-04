@@ -3,6 +3,7 @@ package com.ams.AMS.entities.User;
 import com.ams.AMS.entities.Department.Department;
 import com.ams.AMS.entities.attendace.Attendance;
 import com.ams.AMS.entities.base.BaseEntity;
+import com.ams.AMS.entities.leave.Leaves;
 import com.ams.AMS.entities.roles.Roles;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -51,4 +52,7 @@ public class User extends BaseEntity {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Attendance> attendances = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Leaves> leaves = new ArrayList<>();
 }
