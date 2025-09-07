@@ -2,6 +2,7 @@ package com.ams.AMS.entities.leave;
 
 import com.ams.AMS.entities.User.User;
 import com.ams.AMS.entities.base.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -24,7 +25,8 @@ public class Leaves extends BaseEntity {
 
     private Date endDate;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User user;
 }

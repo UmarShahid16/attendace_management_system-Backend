@@ -45,8 +45,6 @@ public class LeaveController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-
-
     @GetMapping("/pending")
     public ResponseEntity<?> pendingLeaves(@RequestParam String status, @RequestParam(required = false) Long pageNo, @RequestParam(required = false) Long pageSize) {
         Response response = leaveService.pendingLeaves(status ,pageNo, pageSize);

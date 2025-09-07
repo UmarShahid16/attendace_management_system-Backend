@@ -61,6 +61,9 @@ public class LeaveService {
             leaves.setStartDate(leavesVo.getStartDate());
 
             Leaves savedLeave = leaveRepository.save(leaves);
+
+            // TODO: email will be sent directly from here via email of the user.
+
             LeavesVo leavesResponse = LeavesVo.setResponse(savedLeave);
 
             response.setResponse(DAOResponse.SUCCESS);
@@ -275,6 +278,10 @@ public class LeaveService {
             Leaves leavesById = leaveRepository.findLeavesById(leavesVo.getId());
             if(leavesById == null){
                 response.setResponse(DAOResponse.NO_DATA_FOUND);
+                return response;
+            }
+            if(leavesById.getStatus().equalsIgnoreCase("APPROVED")){
+                response.setResponse(DAOResponse.LEAVE_CANNOT_BE_CANCELLED);
                 return response;
             }
             leavesById.setStatus(leavesVo.getStatus());
