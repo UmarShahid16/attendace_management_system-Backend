@@ -13,6 +13,7 @@ public class HolidayVo  extends BaseVo {
     private String holidayName;
     private Date holidayDate;
     private String holidayDescription;
+    private Boolean isActive;
 
 
     public static HolidayVo setResponse (Holidays holiday){
@@ -23,6 +24,7 @@ public class HolidayVo  extends BaseVo {
             holidayVo.setHolidayDate(holiday.getHolidayDate());
             holidayVo.setHolidayDescription(holiday.getDescription());
             holidayVo.setCreatedAt(holiday.getCreatedAt());
+            holidayVo.setIsActive(holiday.getIsActive());
             if(holiday.getCreatedBy() != null){
                 holidayVo.setCreatedBy(holiday.getCreatedBy());
             }

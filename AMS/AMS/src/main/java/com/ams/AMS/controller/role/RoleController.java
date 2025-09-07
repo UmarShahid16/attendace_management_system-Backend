@@ -20,8 +20,8 @@ public class RoleController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @PostMapping("/byId/{id}")
-    public ResponseEntity<?> getRoleById(@RequestBody Long id){
+    @GetMapping("/byId/{id}")
+    public ResponseEntity<?> getRoleById(@PathVariable Long id){
         Response response = roleService.getRoleById(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

@@ -14,7 +14,11 @@ public enum DAOResponse {
     EMAIL_ALREADY_EXISTS("AMS_ERROR_08", "Email Already exists"),
     UNAUTHORIZED("AMS_ERROR_09", "Unauthorized access"),
     ROLE_NOT_FOUND("AMS_ERROR_10", "Role not found"),
-    DEPARTMENT_NOT_FOUND("AMS_ERROR_11", "Department not found");
+    DEPARTMENT_NOT_FOUND("AMS_ERROR_11", "Department not found")
+    ,USER_ID_REQUIRED("AMS_ERROR_12", "User ID is required"),
+    LEAVE_LOG_NOT_FOUND("AMS_ERROR_13", "Leave log not found"),
+    RECORD_NOT_FOUND("AMS_ERROR_14", "Record not found"),
+    LEAVE_CANNOT_BE_CANCELLED("AMS_ERROR_15", "Approved leaves cannot be cancelled"),;
 
     private final String code;
     private final String message;
