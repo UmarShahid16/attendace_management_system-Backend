@@ -49,4 +49,11 @@ public class AttendanceController {
         Response response = attendanceService.monthlyReportAllUsers(month, year, pageNo,pageSize);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    @PostMapping("/manualMarkAttendance")
+    public ResponseEntity<?> manualMarkAttendance(@RequestBody AttendanceVo attendanceVo){
+        Response response = attendanceService.manualMarkAttendance(attendanceVo);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
 }

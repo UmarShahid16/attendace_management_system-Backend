@@ -18,6 +18,7 @@ import java.time.LocalTime;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class AttendanceService {
@@ -254,4 +255,139 @@ public class AttendanceService {
         return response;
     }
 
+    public Response manualMarkAttendance(AttendanceVo attendanceVo){
+        Response response = new Response();
+        try {
+            Attendance attendance = new Attendance();
+            if(attendanceVo == null){
+                response.setResponse(DAOResponse.INVALID_REQUEST);
+                return response;
+            }
+
+            if(attendanceVo.getStatus().equalsIgnoreCase("Present")){
+                if(attendanceVo.getUserId() == null || attendanceVo.getCheckInTime() == null){
+                    response.setResponse(DAOResponse.INVALID_REQUEST);
+                    return response;
+                }
+                User user = userRepository.findUserById(attendanceVo.getUserId());
+                if(user == null){
+                    response.setResponse(DAOResponse.USER_NOT_FOUND);
+                    return response;
+                }
+                attendance.setUser(user);
+                attendance.setCheck_in_time(attendanceVo.getCheckInTime());
+                if(attendanceVo.getCheckOutTime() != null){
+                    attendance.setCheck_out_time(attendanceVo.getCheckOutTime());
+                    LocalTime checkInTime = attendanceVo.getCheckInTime();
+                    LocalTime checkOutTime = attendanceVo.getCheckOutTime();
+                    int totalSeconds = checkOutTime.toSecondOfDay() - checkInTime.toSecondOfDay();
+                    double dailyHours = totalSeconds / 3600.0;
+
+                    int hours = totalSeconds / 3600;
+                    int minutes = (totalSeconds % 3600) / 60;
+                    int seconds = totalSeconds % 60;
+
+                    String workDuration = String.format("%dh %dm %ds", hours, minutes, seconds);
+                    attendance.setWorkHours(workDuration);
+                    attendance.setDailyWorkingHours(dailyHours);
+                }
+                attendance.setStatus("Present");
+
+            }else if(attendanceVo.getStatus().equalsIgnoreCase("Absent")){
+                if(attendanceVo.getUserId() == null || attendanceVo.getCheckInTime() == null){
+                    response.setResponse(DAOResponse.INVALID_REQUEST);
+                    return response;
+                }
+                User user = userRepository.findUserById(attendanceVo.getUserId());
+                if(user == null){
+                    response.setResponse(DAOResponse.USER_NOT_FOUND);
+                    return response;
+                }
+                attendance.setUser(user);
+                attendance.setCheck_in_time(null);
+                attendance.setCheck_out_time(null);
+                attendance.setWorkHours("0h 0m 0s");
+                attendance.setDailyWorkingHours(0.0);
+                attendance.setStatus("Absent");
+            }else if(attendanceVo.getStatus().equalsIgnoreCase("Leave")){
+                if(attendanceVo.getUserId() == null || attendanceVo.getCheckInTime() == null){
+                    response.setResponse(DAOResponse.INVALID_REQUEST);
+                    return response;
+                }
+                User user = userRepository.findUserById(attendanceVo.getUserId());
+                if(user == null){
+                    response.setResponse(DAOResponse.USER_NOT_FOUND);
+                    return response;
+                }
+                attendance.setUser(user);
+                attendance.setCheck_in_time(null);
+                attendance.setCheck_out_time(null);
+                attendance.setWorkHours("0h 0m 0s");
+                attendance.setDailyWorkingHours(0.0);
+                attendance.setStatus("Leave");
+            } else if (attendanceVo.getStatus().equalsIgnoreCase("Half-Day")) {
+                if(attendanceVo.getUserId() == null || attendanceVo.getCheckInTime() == null || attendanceVo.getCheckOutTime() == null){
+                    response.setResponse(DAOResponse.INVALID_REQUEST);
+                    return response;
+                }
+                User user = userRepository.findUserById(attendanceVo.getUserId());
+                if(user == null){
+                    response.setResponse(DAOResponse.USER_NOT_FOUND);
+                    return response;
+                }
+                attendance.setUser(user);
+                attendance.setCheck_in_time(attendanceVo.getCheckInTime());
+                attendance.setCheck_out_time(attendanceVo.getCheckOutTime());
+                LocalTime checkInTime = attendanceVo.getCheckInTime();
+                LocalTime checkOutTime = attendanceVo.getCheckOutTime();
+                int totalSeconds = checkOutTime.toSecondOfDay() - checkInTime.toSecondOfDay();
+                double dailyHours = (totalSeconds / 3600.0);
+
+                String workDuration = AttendanceVo.formatHours(dailyHours);
+                attendance.setWorkHours(workDuration);
+                attendance.setDailyWorkingHours(Double.valueOf(dailyHours));
+                attendance.setStatus("Half Day");
+            } else if(attendanceVo.getStatus().equalsIgnoreCase("Work-From-Home")){
+                if(attendanceVo.getUserId() == null || attendanceVo.getCheckInTime() == null){
+                    response.setResponse(DAOResponse.INVALID_REQUEST);
+                    return response;
+                }
+                User user = userRepository.findUserById(attendanceVo.getUserId());
+                if(user == null){
+                    response.setResponse(DAOResponse.USER_NOT_FOUND);
+                    return response;
+                }
+                attendance.setUser(user);
+                attendance.setCheck_in_time(attendanceVo.getCheckInTime());
+                if(attendanceVo.getCheckOutTime() != null){
+                    attendance.setCheck_out_time(attendanceVo.getCheckOutTime());
+                    LocalTime checkInTime = attendanceVo.getCheckInTime();
+                    LocalTime checkOutTime = attendanceVo.getCheckOutTime();
+                    int totalSeconds = checkOutTime.toSecondOfDay() - checkInTime.toSecondOfDay();
+                    double dailyHours = totalSeconds / 3600.0;
+
+                    int hours = totalSeconds / 3600;
+                    int minutes = (totalSeconds % 3600) / 60;
+                    int seconds = totalSeconds % 60;
+
+                    String workDuration = String.format("%dh %dm %ds", hours, minutes, seconds);
+                    attendance.setWorkHours(workDuration);
+                    attendance.setDailyWorkingHours(dailyHours);
+                }
+                attendance.setStatus("Work From Home");
+            } else {
+                response.setResponse(DAOResponse.INVALID_REQUEST);
+                return response;
+            }
+
+            Attendance save = attendanceRepository.save(attendance);
+            AttendanceVo attendanceVo1 = AttendanceVo.setResponse(save);
+            response.setData("data", attendanceVo1);
+            response.setResponse(DAOResponse.SUCCESS);
+        }catch (Exception e) {
+            e.printStackTrace();
+            response.setResponse(DAOResponse.SYSTEM_ERROR);
+        }
+        return  response;
+    }
 }

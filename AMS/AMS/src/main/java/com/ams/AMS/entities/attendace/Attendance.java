@@ -22,8 +22,6 @@ public class Attendance extends BaseEntity {
     @ToString.Exclude
     private User user;
 
-    private Date date;
-
     private LocalTime check_in_time;
 
     private LocalTime check_out_time;
