@@ -5,13 +5,18 @@ import com.ams.AMS.entities.attendace.Attendance;
 import com.ams.AMS.entities.base.BaseEntity;
 import com.ams.AMS.entities.leave.Leaves;
 import com.ams.AMS.entities.roles.Roles;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+//@JsonIdentityInfo(property = "id", generator = ObjectIdGenerators.PropertyGenerator.class)
 @Entity
 @Table(name = "user")
 @Data
@@ -50,9 +55,12 @@ public class User extends BaseEntity {
 
     private Boolean isActive;
 
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
     private List<Attendance> attendances = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
     private List<Leaves> leaves = new ArrayList<>();
 }

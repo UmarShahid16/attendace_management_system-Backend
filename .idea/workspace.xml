@@ -5,24 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cec3ee67-427f-4aaf-818e-05cd716aa297" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/skybiometry/SkyBiometryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/attendance/AttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/attendance/AttendanceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/department/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/department/DepartmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/holiday/HolidayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/holiday/HolidayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/leave/LeaveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/leave/LeaveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/role/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/role/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/holiday/Holidays.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/holiday/Holidays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/leave/Leaves.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/leave/Leaves.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/User/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/attendace/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/attendace/Attendance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/exceptions/DAOResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/exceptions/DAOResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/attendance/attendanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/attendance/AttendanceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/holiday/HolidayRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/holiday/HolidayRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/attendance/AttendanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/attendance/AttendanceRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/department/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/department/DepartmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/holiday/HolidayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/holiday/HolidayService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/jwtUtil/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/jwtUtil/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/holidayVo/HolidayVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/holidayVo/HolidayVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/imageUtil/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/imageUtil/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/attendanceVo/AttendanceVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/attendanceVo/AttendanceVo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +74,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Spring Boot.AmsApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;rehman&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -116,7 +111,13 @@
       <workItem from="1756905511386" duration="2105000" />
       <workItem from="1756965272384" duration="7549000" />
       <workItem from="1756974866816" duration="15551000" />
-      <workItem from="1757065146772" duration="7985000" />
+      <workItem from="1757065146772" duration="7994000" />
+      <workItem from="1757401779420" duration="4232000" />
+      <workItem from="1757574755984" duration="37000" />
+      <workItem from="1757591413268" duration="3927000" />
+      <workItem from="1758709241015" duration="20875000" />
+      <workItem from="1758872603261" duration="2623000" />
+      <workItem from="1758882536081" duration="2424000" />
     </task>
     <servers />
   </component>
@@ -128,23 +129,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
-          <line>165</line>
+          <line>177</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
-          <line>188</line>
+          <line>200</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveLogService.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java</url>
-          <line>231</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/role/RoleService.java</url>
@@ -168,57 +159,163 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/leave/LeaveController.java</url>
-          <line>19</line>
+          <line>65</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/leave/LeaveController.java</url>
-          <line>49</line>
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/user/UserController.java</url>
+          <line>18</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java</url>
-          <line>208</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java</url>
-          <line>195</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java</url>
-          <line>248</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/leave/LeaveController.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java</url>
-          <line>271</line>
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/imageUtil/ImageUtil.java</url>
+          <line>12</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java</url>
-          <line>282</line>
-          <option name="timeStamp" value="20" />
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/skybiometry/SkyBiometryService.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/leave/LeaveService.java</url>
-          <line>109</line>
-          <properties class="com.ams.AMS.services.leave.LeaveService" method="leavesByUserId">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/skybiometry/SkyBiometryService.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/skybiometry/SkyBiometryService.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/attendance/AttendanceController.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/util/skybiometry/SkyBiometryService.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/attendance/AttendanceController.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/attendance/AttendanceController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/vo/attendanceVo/AttendanceVo.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/attendance/AttendanceController.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
+          <line>153</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/attendance/AttendanceController.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
+          <line>176</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/attendance/AttendanceController.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
+          <line>207</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
+          <line>231</line>
+          <option name="timeStamp" value="62" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

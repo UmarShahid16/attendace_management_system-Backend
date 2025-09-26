@@ -8,6 +8,7 @@ import com.ams.AMS.repository.role.RoleRepository;
 import com.ams.AMS.repository.user.UserRepository;
 import com.ams.AMS.util.imageUtil.ImageUtil;
 import com.ams.AMS.util.jwtUtil.JwtUtil;
+import com.ams.AMS.util.skybiometry.SkyBiometryService;
 import com.ams.AMS.vo.userVo.UserVo;
 import com.ams.AMS.exceptions.DAOResponse;
 import com.ams.AMS.util.response.Response;
@@ -40,6 +41,8 @@ public class UserService {
     private AuthenticationManager authenticationManager;
     @Autowired
     private JwtUtil jwtUtil;
+    @Autowired
+    private SkyBiometryService skyBiometryService;
 
     public Response saveUser(UserVo userVo){
         Response response = new Response();
@@ -83,11 +86,20 @@ public class UserService {
                     String image = ImageUtil.saveBase64Image(userVo.getImageStr());
                     user.setImageUrl(image);
                 }
+                if(userVo.getImageUrl() != null){
+                    user.setImageUrl(userVo.getImageUrl());
+                }
                 user.setImageName(userVo.getImageName());
                 user.setDepartment(departmentName);
                 user.setRoles(roleName);
 
                 userRepository.save(user);
+
+                String tid = skyBiometryService.detectFace(user.getImageUrl());
+                skyBiometryService.saveFace(tid, user.getId());
+                skyBiometryService.trainFace(user.getId());
+
+
                 response.setResponse(DAOResponse.SUCCESS);
                 response.setData("user", UserVo.setResponse(user));
             }else {

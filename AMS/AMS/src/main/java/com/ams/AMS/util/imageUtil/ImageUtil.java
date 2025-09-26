@@ -10,11 +10,25 @@ public class ImageUtil {
 
     public static String saveBase64Image(String base64Str) {
         try {
+            String extension = "";
             if (base64Str.contains(",")) {
+                // extract prefix before comma
+                String prefix = base64Str.split(",")[0];
                 base64Str = base64Str.split(",")[1];
+
+                if (prefix.contains("image/png")) {
+                    extension = "png";
+                } else if (prefix.contains("image/jpeg")) {
+                    extension = "jpg";
+                } else if (prefix.contains("image/gif")) {
+                    extension = "gif";
+                } else if (prefix.contains("image/webp")) {
+                    extension = "webp";
+                }
             }
+
             byte[] decodedBytes = Base64.getDecoder().decode(base64Str);
-            String fileName = UUID.randomUUID() + ".jpg";
+            String fileName = UUID.randomUUID() + "." + extension;
             String folderPath = "D:/My Data/MyProjects/AMS-images/";
 
             File directory = new File(folderPath);
@@ -33,4 +47,3 @@ public class ImageUtil {
         }
     }
 }
-

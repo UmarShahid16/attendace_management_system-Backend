@@ -2,8 +2,10 @@ package com.ams.AMS.entities.attendace;
 
 import com.ams.AMS.entities.User.User;
 import com.ams.AMS.entities.base.BaseEntity;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.sql.Timestamp;
 import java.time.LocalTime;
@@ -14,8 +16,10 @@ import java.util.Date;
 @Data
 public class Attendance extends BaseEntity {
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "userId")
+    @ToString.Exclude
     private User user;
 
     private Date date;
@@ -26,5 +30,7 @@ public class Attendance extends BaseEntity {
 
     private String status;
 
-    private Double workHours;
+    private String workHours;
+
+    private Double dailyWorkingHours;
 }
