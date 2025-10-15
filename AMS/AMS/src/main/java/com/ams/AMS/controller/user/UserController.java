@@ -37,5 +37,11 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/employeeCounts")
+    public ResponseEntity<?> getEmployeeCounts() {
+        Response response = userService.getEmployeeCounts();
+        return ResponseEntity.ok(response);
+    }
+
 
 }

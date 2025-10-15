@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cec3ee67-427f-4aaf-818e-05cd716aa297" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/config/CorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/attendance/AttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/attendance/AttendanceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/attendace/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/entities/attendace/Attendance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/attendance/AttendanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/attendance/AttendanceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/repository/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +48,9 @@
     &quot;accountId&quot;: &quot;2ab3ebe6-893e-4cfd-bd51-fa2eebcba2d1&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/6.5.3/spring-security-config-6.5.3.jar!/org/springframework/security/config/annotation/web/configurers/CorsConfigurer.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -71,6 +79,9 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -110,7 +121,10 @@
       <workItem from="1758872603261" duration="2623000" />
       <workItem from="1758882536081" duration="2508000" />
       <workItem from="1758885831748" duration="693000" />
-      <workItem from="1758886571991" duration="1320000" />
+      <workItem from="1758886571991" duration="2018000" />
+      <workItem from="1760341670566" duration="2663000" />
+      <workItem from="1760421356566" duration="11718000" />
+      <workItem from="1760443424423" duration="2437000" />
     </task>
     <servers />
   </component>
@@ -120,16 +134,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
-          <line>177</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
-          <line>200</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/role/RoleService.java</url>
           <line>26</line>
@@ -309,6 +313,26 @@
           <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/attendance/AttendanceService.java</url>
           <line>232</line>
           <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/controller/user/UserController.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
+          <line>146</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AMS/AMS/src/main/java/com/ams/AMS/services/user/UserService.java</url>
+          <line>167</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

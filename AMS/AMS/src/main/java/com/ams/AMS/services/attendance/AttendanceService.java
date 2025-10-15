@@ -390,4 +390,45 @@ public class AttendanceService {
         }
         return  response;
     }
+
+    public Response dailyAttendanceCount() {
+        Response response = new Response();
+        Map<String, Object> map = new LinkedHashMap<>();
+
+        try {
+            List<Object[]> result = attendanceRepository.countAttendanceByCreatedAt();
+
+            if (result != null && !result.isEmpty()) {
+                Object[] objects = result.get(0);
+
+                long presentCount = ((Number) (objects[0] != null ? objects[0] : 0)).longValue();
+                long absentCount = ((Number) (objects[1] != null ? objects[1] : 0)).longValue();
+                long wfhCount = ((Number) (objects[2] != null ? objects[2] : 0)).longValue();
+                long leaveCount = ((Number) (objects[3] != null ? objects[3] : 0)).longValue();
+                long total = ((Number) (objects[4] != null ? objects[4] : 0)).longValue();
+
+                double presentPercentage = (total > 0)
+                        ? ((double) presentCount / total) * 100
+                        : 0.0;
+
+                presentPercentage = Math.round(presentPercentage * 100.0) / 100.0;
+
+                map.put("presentCount", presentCount);
+                map.put("absentCount", absentCount);
+                map.put("wfhCount", wfhCount);
+                map.put("leaveCount", leaveCount);
+                map.put("total", total);
+                map.put("presentPercentage", presentPercentage);
+            }
+            response.setData("data", map);
+            response.setResponse(DAOResponse.SUCCESS);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setResponse(DAOResponse.SYSTEM_ERROR);
+        }
+
+        return response;
+    }
+
 }

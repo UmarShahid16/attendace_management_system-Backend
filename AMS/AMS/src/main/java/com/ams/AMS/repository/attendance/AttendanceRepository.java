@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -26,5 +27,8 @@ public interface AttendanceRepository extends JpaRepository<Attendance, Long> {
 
     @Query(value = "SELECT * FROM attendance WHERE DATE(created_at) = :date", nativeQuery = true)
     List<Attendance> findDailyAttendance(@Param("date") String date);
+
+    @Query(value = "SELECT SUM(CASE WHEN STATUS = 'Present' THEN 1 ELSE 0 END) AS PresentCount, SUM(CASE WHEN STATUS = 'Absent' THEN 1 ELSE 0 END) AS AbsentCount, SUM(CASE WHEN STATUS = 'WFH' THEN 1 ELSE 0 END) AS WFHCount, SUM(CASE WHEN STATUS = 'Leave' THEN 1 ELSE 0 END) AS LeaveCount, COUNT(*) AS Total FROM attendance WHERE DATE(created_at) = CURDATE()", nativeQuery = true)
+    List<Object []> countAttendanceByCreatedAt();
 
 }

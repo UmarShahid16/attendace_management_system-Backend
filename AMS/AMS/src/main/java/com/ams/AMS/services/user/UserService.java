@@ -219,4 +219,28 @@ public class UserService {
         }
         return response;
     }
+
+    public Response getEmployeeCounts(){
+        Response  response = new Response();
+        try{
+            Long totalEmployees = userRepository.countUsers();
+            Long activeEmployees = userRepository.findAllActiveEmployees();
+            Long inactiveEmployees = totalEmployees - activeEmployees;
+
+            Map<String, Long> counts = new HashMap<>();
+            counts.put("totalEmployees", totalEmployees);
+            counts.put("activeEmployees", activeEmployees);
+            counts.put("inactiveEmployees", inactiveEmployees);
+
+            response.setResponse(DAOResponse.SUCCESS);
+            response.setData("employeeCounts", counts);
+            return response;
+
+        }catch(Exception e){
+            e.printStackTrace();
+            logger.severe("Error in fetching employee counts");
+        }
+        return response;
+    }
+
 }

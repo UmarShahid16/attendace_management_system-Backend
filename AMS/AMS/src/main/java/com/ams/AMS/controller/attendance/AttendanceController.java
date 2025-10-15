@@ -56,4 +56,10 @@ public class AttendanceController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @GetMapping("/dailyAttendanceCounts")
+    public ResponseEntity<?> dailyAttendanceCounts(){
+        Response response = attendanceService.dailyAttendanceCount();
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
 }
