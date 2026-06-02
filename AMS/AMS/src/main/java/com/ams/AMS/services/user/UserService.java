@@ -2,8 +2,10 @@ package com.ams.AMS.services.user;
 
 import com.ams.AMS.entities.Department.Department;
 import com.ams.AMS.entities.User.User;
+import com.ams.AMS.entities.leave.LeavesLog;
 import com.ams.AMS.entities.roles.Roles;
 import com.ams.AMS.repository.department.DepartmentRepository;
+import com.ams.AMS.repository.leave.LeaveLogRepository;
 import com.ams.AMS.repository.role.RoleRepository;
 import com.ams.AMS.repository.user.UserRepository;
 import com.ams.AMS.util.imageUtil.ImageUtil;
@@ -43,6 +45,8 @@ public class UserService {
     private JwtUtil jwtUtil;
     @Autowired
     private SkyBiometryService skyBiometryService;
+    @Autowired
+    private LeaveLogRepository leaveLogRepository;
 
     public Response saveUser(UserVo userVo){
         Response response = new Response();
@@ -94,6 +98,14 @@ public class UserService {
                 user.setRoles(roleName);
 
                 userRepository.save(user);
+
+                LeavesLog leavesLog = new LeavesLog();
+                leavesLog.setAnnualLeaves(10L);
+                leavesLog.setCasualLeaves(10L);
+                leavesLog.setSickLeaves(10L);
+                leavesLog.setTotalLeaves(30L);
+                leavesLog.setUser(user);
+                leaveLogRepository.save(leavesLog);
 
                 String tid = skyBiometryService.detectFace(user.getImageUrl());
                 skyBiometryService.saveFace(tid, user.getId());

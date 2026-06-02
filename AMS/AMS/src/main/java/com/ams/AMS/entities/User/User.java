@@ -30,7 +30,7 @@ public class User extends BaseEntity {
 
     private String password;
 
-    private int phone;
+    private Long phone;
 
     private String address;
 

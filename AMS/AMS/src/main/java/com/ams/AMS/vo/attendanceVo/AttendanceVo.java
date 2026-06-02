@@ -24,6 +24,7 @@ public class AttendanceVo extends BaseVo {
     private String workHours;
     private Double dailyWorkingHours;
     private String imageUrl;
+    private String day;
 
     public static AttendanceVo setResponse(Attendance attendance) {
         AttendanceVo attendanceVo = new AttendanceVo();

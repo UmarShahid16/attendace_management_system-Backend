@@ -12,13 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class AttendanceService {
@@ -69,7 +69,7 @@ public class AttendanceService {
         return response;
     }
 
-    public Response markCheckOut(Long userId){
+    public Response markCheckOut(Long userId, LocalDate createdDate){
         Response response = new Response();
         try {
             if(userId == null){
@@ -77,7 +77,7 @@ public class AttendanceService {
                 return response;
             }
 
-            Attendance attendance = attendanceRepository.findUserAttendance(userId);
+            Attendance attendance = attendanceRepository.findUserAttendance(userId, createdDate);
             if(attendance != null) {
                 LocalTime checkInTime = attendance.getCheck_in_time();
                 LocalTime checkOutTime = LocalTime.now();
@@ -427,6 +427,91 @@ public class AttendanceService {
             e.printStackTrace();
             response.setResponse(DAOResponse.SYSTEM_ERROR);
         }
+
+        return response;
+    }
+
+    public Response markAttendance1(AttendanceVo attendanceVo){
+
+        Response response = new Response();
+
+        try {
+
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+            String email = authentication.getName();
+
+            User user = userRepository.findByEmail(email);
+
+            // CHECK-IN
+            if(attendanceVo.getCheckInTime() != null){
+
+                LocalDate currentDate = LocalDate.now();
+                // Check if already signed in today
+                Attendance alreadyExists = attendanceRepository.findUserAttendance(user.getId(), currentDate);
+
+                if(alreadyExists != null){
+                    response.setResponse(DAOResponse.ATTENDANCE_ALREADY_EXIST);
+                    response.setMessage("You have already signed in today");
+                    return response;
+                }
+
+                Attendance attendance = new Attendance();
+                attendance.setCheck_in_time(attendanceVo.getCheckInTime());
+                attendance.setDay(attendanceVo.getDay());
+                attendance.setWorkHours("9");
+                attendance.setUser(user);
+
+                Attendance save = attendanceRepository.save(attendance);
+
+                response.setResponse(DAOResponse.SUCCESS);
+                response.setData("data", save);
+
+                return response;
+            }
+
+            // CHECK-OUT
+            else if(attendanceVo.getCheckOutTime() != null){
+
+                Attendance attendance = attendanceRepository.findByUserIdAndDayAndCheckOutTimeIsNull(user.getId());
+
+                if(attendance == null){
+                    response.setResponse(DAOResponse.ATTENDANCE_NOT_FOUND);
+                    return response;
+                }
+
+                attendance.setCheck_out_time(attendanceVo.getCheckOutTime());
+
+                LocalTime checkIn = attendance.getCheck_in_time();
+                LocalTime checkOut = attendanceVo.getCheckOutTime();
+
+                long minutes = java.time.Duration.between(checkIn, checkOut).toMinutes();
+
+                double hours = minutes / 60.0;
+
+                attendance.setDailyWorkingHours(hours);
+                if (hours >= 9){
+                    attendance.setStatus("Complete");
+                }
+                else {
+                    attendance.setStatus("Incomplete");
+                }
+
+                Attendance updated = attendanceRepository.save(attendance);
+
+                response.setResponse(DAOResponse.SUCCESS);
+                response.setData("data", updated);
+
+                return response;
+            }
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+        response.setResponse(DAOResponse.SYSTEM_ERROR);
+        response.setMessage("Something went wrong");
 
         return response;
     }

@@ -21,7 +21,8 @@ public enum DAOResponse {
     LEAVE_CANNOT_BE_CANCELLED("AMS_ERROR_15", "Approved leaves cannot be cancelled"),
     IMAGE_URL_REQUIRED("AMS_ERROR_16", "Image URL is required"),
     FACE_NOT_RECOGNIZED("AMS_ERROR_17", "Face not recognized or confidence too low"),
-    ATTENDANCE_NOT_FOUND("AMS_ERROR_18", "Attendance record not found"),;
+    ATTENDANCE_NOT_FOUND("AMS_ERROR_18", "Attendance record not found"),
+    ATTENDANCE_ALREADY_EXIST("AMS_ERROR_19", "Attendance record already exist"),;
 
     private final String code;
     private final String message;

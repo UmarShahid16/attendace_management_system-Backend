@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+
 @RestController
 @RequestMapping("/attendance")
 public class AttendanceController {
@@ -21,8 +23,14 @@ public class AttendanceController {
     }
 
     @PostMapping("/checkOut")
-    public ResponseEntity<?> markCheckOut(@RequestParam("userId") Long userId){
-        Response response = attendanceService.markCheckOut(userId);
+    public ResponseEntity<?> markCheckOut(@RequestParam("userId") Long userId, LocalDate date){
+        Response response = attendanceService.markCheckOut(userId, date);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @PostMapping("/mark")
+    public ResponseEntity<?> mark(@RequestBody AttendanceVo attendanceVo){
+        Response response = attendanceService.markAttendance1(attendanceVo);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 

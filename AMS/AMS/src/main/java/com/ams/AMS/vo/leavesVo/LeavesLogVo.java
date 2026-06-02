@@ -11,7 +11,7 @@ public class LeavesLogVo extends BaseVo {
     private Long totalLeaves;
     private Long sickLeaves;
     private Long casualLeaves;
-    private Long earnedLeaves;
+    private Long annualLeaves;
     private Boolean isAllLeavesEncashed;
 
     public static LeavesLogVo setResponse(LeavesLog leavesLog) {
@@ -32,7 +32,7 @@ public class LeavesLogVo extends BaseVo {
             vo.setTotalLeaves(leavesLog.getTotalLeaves());
             vo.setSickLeaves(leavesLog.getSickLeaves());
             vo.setCasualLeaves(leavesLog.getCasualLeaves());
-            vo.setEarnedLeaves(leavesLog.getEarnedLeaves());
+            vo.setAnnualLeaves(leavesLog.getAnnualLeaves());
             vo.setIsAllLeavesEncashed(leavesLog.getIsAllLeavesEncashed());
         }
         return vo;

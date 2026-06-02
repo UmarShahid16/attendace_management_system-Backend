@@ -1,9 +1,11 @@
 package com.ams.AMS.controller.user;
 
+import com.ams.AMS.exceptions.DAOResponse;
 import com.ams.AMS.vo.userVo.UserVo;
 import com.ams.AMS.services.user.UserService;
 import com.ams.AMS.util.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +25,9 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserVo userVo) {
         Response loginResponse = userService.login(userVo);
+        if (loginResponse.getMessage().equals("Invalid credentials")) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(loginResponse);
+        }
         return ResponseEntity.ok(loginResponse);
     }
     @GetMapping("/list")

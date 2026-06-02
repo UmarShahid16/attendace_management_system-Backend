@@ -28,5 +28,10 @@ public class LeaveLogController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @GetMapping("/getLeaves")
+    public ResponseEntity<?> getLeaves(){
+        Response response = leaveLogService.getLeaves();
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 
 }

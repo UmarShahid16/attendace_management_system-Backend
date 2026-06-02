@@ -8,6 +8,8 @@ import com.ams.AMS.repository.user.UserRepository;
 import com.ams.AMS.util.response.Response;
 import com.ams.AMS.vo.leavesVo.LeavesLogVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -40,7 +42,7 @@ public class LeaveLogService {
                 leavesLog.setTotalLeaves(leavesLogVo.getTotalLeaves());
                 leavesLog.setSickLeaves(0L);
                 leavesLog.setCasualLeaves(0L);
-                leavesLog.setEarnedLeaves(0L);
+                leavesLog.setAnnualLeaves(0L);
                 leavesLog.setIsAllLeavesEncashed(false);
                 leavesLog.setCreatedAt(new Date());
                 leavesLog.setCreatedBy("System");
@@ -96,6 +98,30 @@ public class LeaveLogService {
         }catch (Exception e){
             e.printStackTrace();
             logger.severe("Error in leaveBalance: " + e.getMessage());
+        }
+        return response;
+    }
+    
+    public Response getLeaves(){
+        Response response = new Response();
+        try {
+
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+            String email = authentication.getName();
+
+            User user = userRepository.findByEmail(email);
+
+            LeavesLog leaves = leaveLogRepository.findLeavesLogByUserId(user.getId());
+            LeavesLogVo leavesLogVo = LeavesLogVo.setResponse(leaves);
+
+            response.setResponse(DAOResponse.SUCCESS);
+            response.setData("data", leavesLogVo);
+            return response;
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
         }
         return response;
     }

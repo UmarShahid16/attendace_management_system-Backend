@@ -31,4 +31,6 @@ public class Attendance extends BaseEntity {
     private String workHours;
 
     private Double dailyWorkingHours;
+
+    private String day;
 }

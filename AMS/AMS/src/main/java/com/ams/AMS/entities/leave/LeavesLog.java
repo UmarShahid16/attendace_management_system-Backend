@@ -13,7 +13,7 @@ public class LeavesLog extends BaseEntity {
     private Long totalLeaves;
     private Long sickLeaves;
     private Long casualLeaves;
-    private Long earnedLeaves;
+    private Long annualLeaves;
     private Boolean isAllLeavesEncashed;
 
     @OneToOne(fetch = FetchType.LAZY)
