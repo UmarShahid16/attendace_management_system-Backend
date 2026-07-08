@@ -48,5 +48,9 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
-
+    @GetMapping("/dashboardCount")
+    public ResponseEntity<?> dashboardCount(){
+        Response response = userService.dashboardCount();
+        return ResponseEntity.ok(response);
+    }
 }

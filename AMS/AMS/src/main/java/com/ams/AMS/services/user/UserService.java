@@ -169,6 +169,8 @@ public class UserService {
             responseData.put("name", user.getFirstName());
             responseData.put("role", role);
             responseData.put("userId", user.getId());
+            responseData.put("designation", user.getDesignation());
+            responseData.put("email", user.getEmail());
 
             response.setResponse(DAOResponse.SUCCESS);
             response.setResponseData(responseData);
@@ -255,4 +257,27 @@ public class UserService {
         return response;
     }
 
+    public Response dashboardCount(){
+        Response response = new Response();
+
+        try {
+
+            List<Object[]> result = userRepository.dashboardCount();
+
+            Object[] row = result.get(0);
+
+            Map<String, Object> data = new HashMap<>();
+            data.put("totalEmployees", ((Number) row[0]).longValue());
+            data.put("presentToday", ((Number) row[1]).longValue());
+            data.put("onLeave", ((Number) row[2]).longValue());
+
+            response.setResponse(DAOResponse.SUCCESS);
+            response.setData("data", data);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            logger.severe("Error in fetching employee counts");
+        }
+        return response;
+    }
 }

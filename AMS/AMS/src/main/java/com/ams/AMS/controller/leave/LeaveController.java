@@ -63,4 +63,9 @@ public class LeaveController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @GetMapping("/leaveBalance")
+    public ResponseEntity<?> leaveBalance(@RequestParam(required = false) Long pageNo, @RequestParam(required = false) Long pageSize) {
+        Response response = leaveService.leaveBalance(pageNo, pageSize);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }

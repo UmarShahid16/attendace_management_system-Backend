@@ -120,7 +120,7 @@ public class AttendanceService {
                 return response;
             }
             List<Attendance> attendanceList = attendanceRepository.findMonthlyAttendanceByUserId(userId, month, year);
-            if(attendanceList.isEmpty()){
+                if(attendanceList.isEmpty()){
                 response.setResponse(DAOResponse.NO_DATA_FOUND);
                 return response;
             }

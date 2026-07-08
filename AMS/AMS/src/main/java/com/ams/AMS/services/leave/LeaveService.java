@@ -2,7 +2,10 @@ package com.ams.AMS.services.leave;
 
 import com.ams.AMS.entities.User.User;
 import com.ams.AMS.entities.leave.Leaves;
+import com.ams.AMS.entities.leave.LeavesLog;
 import com.ams.AMS.exceptions.DAOResponse;
+import com.ams.AMS.repository.department.DepartmentRepository;
+import com.ams.AMS.repository.leave.LeaveLogRepository;
 import com.ams.AMS.repository.leave.LeaveRepository;
 import com.ams.AMS.repository.user.UserRepository;
 import com.ams.AMS.util.response.Response;
@@ -15,10 +18,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 
 @Service
@@ -28,6 +28,10 @@ public class LeaveService {
     private LeaveRepository leaveRepository;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private LeaveLogRepository leaveLogRepository;
+    @Autowired
+    private DepartmentRepository departmentRepository;
 
     public static final Logger logger = Logger.getLogger(LeaveService.class.getName());
 
@@ -53,7 +57,7 @@ public class LeaveService {
             leaves.setLeaveType(leavesVo.getLeaveType());
             leaves.setDescription(leavesVo.getLeaveDescription());
             leaves.setMaxDays(leavesVo.getMaxDays());
-            leaves.setStatus(leavesVo.getStatus());
+            leaves.setStatus("pending");
             leaves.setCreatedAt(new Date());
             if(leavesVo.getEndDate() != null){
                 leaves.setEndDate(leavesVo.getEndDate());
@@ -292,6 +296,49 @@ public class LeaveService {
             response.setResponse(DAOResponse.SUCCESS);
             response.setData("leaves", leaves);
         }catch (Exception e){
+            e.printStackTrace();
+            logger.severe("Error in cancelLeave: " + e.getMessage());
+        }
+        return response;
+    }
+
+    public Response leaveBalance(Long pageNo, Long pageSize){
+
+        Response response = new Response();
+
+        try {
+            pageNo = (pageNo == null || pageNo < 0) ? 0 : pageNo;
+            pageSize = (pageSize == null || pageSize <= 0) ? 10 : pageSize;
+            Sort sort = Sort.by(Sort.Direction.DESC, "id");
+            Pageable pageable = PageRequest.of(Math.toIntExact(pageNo), Math.toIntExact(pageSize), sort);
+            Page<User> users;
+
+            users = userRepository.findUserByIsActiveTrue(pageable);
+
+            List<Map<String, Object>> leaveBalanceList = new ArrayList<>();
+            for (User user : users.getContent()){
+               LeavesLog totalLeaves = leaveLogRepository.findLeavesLogByUserId(user.getId());
+                long total = totalLeaves != null ? totalLeaves.getTotalLeaves() : 0;
+
+               Integer usedLeaves = leaveRepository.findLeavesByUser(user.getId());
+                usedLeaves = usedLeaves != null ? usedLeaves : 0;
+
+               Long remainingLeaves = total - usedLeaves;
+
+               Map<String, Object> map = new HashMap<>();
+               map.put("name",user.getFirstName() + " " + user.getLastName());
+               map.put("department", user.getDepartment().getDepartmentName());
+               map.put("totalLeaves", total);
+               map.put("usedLeaves", usedLeaves);
+               map.put("remainingLeaves", remainingLeaves);
+
+               leaveBalanceList.add(map);
+            }
+            response.setResponse(DAOResponse.SUCCESS);
+            response.setData("data", leaveBalanceList);
+            return response;
+        }
+        catch (Exception e){
             e.printStackTrace();
             logger.severe("Error in cancelLeave: " + e.getMessage());
         }

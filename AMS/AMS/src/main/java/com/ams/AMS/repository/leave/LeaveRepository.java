@@ -4,6 +4,7 @@ import com.ams.AMS.entities.leave.Leaves;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Date;
@@ -17,4 +18,7 @@ public interface LeaveRepository extends JpaRepository<Leaves, Long> {
     Page<Leaves> findLeavesByStatus(String status, Pageable pageable);
 
     Page<Leaves> findLeavesByStartDateAndEndDate(Date startDate, Date endDate, Pageable pageable);
+
+    @Query(value = "select sum(max_days) from leaves where user_id = :userId and status = 'approved'", nativeQuery = true)
+    Integer findLeavesByUser(Long userId);
 }

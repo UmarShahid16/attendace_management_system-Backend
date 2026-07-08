@@ -18,6 +18,7 @@ public class LeavesVo  extends BaseVo {
     private String status;
     private Date startDate;
     private Date endDate;
+    private String email;
 
 
 
@@ -34,6 +35,7 @@ public class LeavesVo  extends BaseVo {
            if(leaves.getUser() != null){
                vo.setUserId(leaves.getUser().getId());
                vo.setUserName(leaves.getUser().getFirstName() + " " + leaves.getUser().getLastName());
+               vo.setEmail(leaves.getUser().getEmail());
            }
            if(leaves.getCreatedBy() != null){
                vo.setCreatedBy(leaves.getCreatedBy());
